@@ -1,4 +1,4 @@
-# General Introduction to Python Talk
+# General Introduction to Python
 A broad review of Python, IPython and the use of Python within the scientific space.
 
 ## Slideshow
@@ -10,7 +10,7 @@ A broad review of Python, IPython and the use of Python within the scientific sp
 
 ## Instalation
 * Download and install [Anaconda](http://continuum.io/) 
-* Run `pip install requiremtents.txt`
+* Run `pip install requirements.txt`
 * Download this repo and run `ipython notebook` from the command line when inside the directory
 
 ## Feedback
