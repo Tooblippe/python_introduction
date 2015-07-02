@@ -6,7 +6,8 @@ Created on Thu Jul  2 19:44:18 2015
 """
 
 !ipython nbconvert --to html denel_python_introduction.ipynb 
-!ipython nbconvert --to slides denel_python_introduction.ipynb --post serve
+!ipython nbconvert --to slides denel_python_introduction.ipynb
+
 !git add .
 !git commit
 !git push -u origin master
