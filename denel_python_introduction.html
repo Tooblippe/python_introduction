@@ -1520,6 +1520,59 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Python-use-with-RF-Engineering">Python use with RF Engineering<a class="anchor-link" href="#Python-use-with-RF-Engineering">&#182;</a></h1><p><img src="resources/img/smith_chart.png" alt="smith_chart.png"  height="300" align="right"> 
+<a href="http://scikit-rf-web.readthedocs.org/">scikit-rf</a> (aka skrf) is an Open Source, BSD-licensed package for RF/Microwave engineering implemented in the Python programming language. Based on this <a href="http://ieeexplore.ieee.org/xpl/login.jsp?reload=true&tp=&arnumber=6031940&url=http://ieeexplore.ieee.org/iel5/6668/6031938/06031940.pdf?arnumber%3D6031940">Paper from MIT</a></p>
+<ul>
+<li><p>Read/Write touchstone (.s2p, s?p) files</p>
+</li>
+<li><p>Basic algebraic operations on networks’ scattering parameters</p>
+</li>
+<li><p>Cascade/De-embed 2-port networks
+<img src="resources/img/quartz.png" alt="pyradi"  height="250" align="right"></p>
+</li>
+<li><p>Connect n-port networks</p>
+</li>
+<li><p>Plot network parameter data [s, y, z] in ( dB, Phase, Smith chart, ...)</p>
+</li>
+<li><p>Save plots in vector format for publication (a feature of matplotlib)</p>
+</li>
+<li><p>1-port calibration:</p>
+<ul>
+<li>SOL</li>
+<li>Least Squares (any number of standards)</li>
+<li>SDDL</li>
+</ul>
+</li>
+<li><p>2-port calibration:</p>
+<ul>
+<li>SOLT</li>
+<li>Unknown Thru</li>
+<li>General 8-term</li>
+<li>TRL ( partial support only)
+Enhanced Response</li>
+</ul>
+</li>
+<li><p>Inegrated VNA virtual instruments (completeness varies by model)</p>
+<ul>
+<li>PNA, PNAX</li>
+<li>ZVA</li>
+<li>HP8510, HP8720</li>
+</ul>
+</li>
+<li><p>Circuit synthesis</p>
+</li>
+<li><p>Transmission line models</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h1>Databases <img src="resources/img/sql.png" alt="guido"  height="80" align="right"></h1>
 <ul>
 <li>interact directly with sqlite, mySQL, Oracle, MSSql etc</li>
