@@ -1,0 +1,12 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Jul  2 19:44:18 2015
+
+@author: tobie
+"""
+
+!ipython nbconvert --to html denel_python_introduction.ipynb 
+!ipython nbconvert --to slides denel_python_introduction.ipynb --post serve
+!git add .
+!git commit
+!git push -u origin master

@@ -1,41 +1,12 @@
-
 <!DOCTYPE html>
 <html>
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="X-UA-Compatible" content="chrome=1" />
-
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-
-<title>denel_python_introduction slides</title>
+<title>denel_python_introduction</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-<!-- General and theme style sheets -->
-<link rel="stylesheet" href="reveal.js/css/reveal.css">
-<link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
-
-<!-- If the query includes 'print-pdf', include the PDF print sheet -->
-<script>
-if( window.location.search.match( /print-pdf/gi ) ) {
-        var link = document.createElement( 'link' );
-        link.rel = 'stylesheet';
-        link.type = 'text/css';
-        link.href = 'reveal.js/css/print/pdf.css';
-        document.getElementsByTagName( 'head' )[0].appendChild( link );
-}
-
-</script>
-
-<!--[if lt IE 9]>
-<script src="reveal.js/lib/js/html5shiv.js"></script>
-<![endif]-->
-
-<!-- Get Font-awesome from cdn -->
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css">
 
 <style type="text/css">
     /*!
@@ -144,78 +115,63 @@ if( window.location.search.match( /print-pdf/gi ) ) {
 
 <style type="text/css">
 /* Overrides of notebook CSS for static HTML export */
-html {
-  overflow-y: auto;
+body {
+  overflow: visible;
+  padding: 8px;
 }
-.reveal {
-  font-size: 160%;
+
+div#notebook {
+  overflow: visible;
+  border-top: none;
 }
-.reveal pre {
-  width: inherit;
-  padding: 0.4em;
-  margin: 0px;
-  font-family: monospace, sans-serif;
-  font-size: 80%;
-  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
-}
-.reveal pre code {
-  padding: 0px;
-}
-.reveal section img {
-  border: 0px solid black;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0);
-}
-.reveal i {
-  font-style: normal;
-  font-family: FontAwesome;
-  font-size: 2em;
-}
-.reveal .slides {
-  text-align: left;
-}
-.reveal.fade {
-  opacity: 1;
-}
-.reveal .progress {
-  position: static;
-}
-div.input_area {
-  padding: 0.06em;
-}
-div.code_cell {
-  background-color: transparent;
-}
-div.prompt {
-  width: 11ex;
-  padding: 0.4em;
-  margin: 0px;
-  font-family: monospace, sans-serif;
-  font-size: 80%;
-  text-align: right;
-}
-div.output_area pre {
-  font-family: monospace, sans-serif;
-  font-size: 80%;
-}
-div.output_prompt {
-  /* 5px right shift to account for margin in parent container */
-  margin: 5px 5px 0 0;
-}
-.rendered_html p {
-  text-align: inherit;
+
+@media print {
+  div.cell {
+    display: block;
+    page-break-inside: avoid;
+  } 
+  div.output_wrapper { 
+    display: block;
+    page-break-inside: avoid; 
+  }
+  div.output { 
+    display: block;
+    page-break-inside: avoid; 
+  }
 }
 </style>
 
 <!-- Custom stylesheet, it must be in the same directory as the html file -->
 <link rel="stylesheet" href="custom.css">
 
-</head>
+<!-- Loading mathjax macro -->
+<!-- Load mathjax -->
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    <!-- MathJax configuration -->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        // Center justify equations in code and markdown cells. Elsewhere
+        // we use CSS to left justify single line equations in code cells.
+        displayAlign: 'center',
+        "HTML-CSS": {
+            styles: {'.MathJax_Display': {"margin": 0}},
+            linebreaks: { automatic: true }
+        }
+    });
+    </script>
+    <!-- End of mathjax configuration -->
 
+</head>
 <body>
-<div class="reveal">
-<div class="slides">
-<div style=display:none>
-    
+  <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -232,8 +188,6 @@ div.output_prompt {
 </div>
 </div>
 </div>
-    </div><div style=display:none>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -261,8 +215,6 @@ div.output_prompt {
 </div>
 </div>
 </div>
-    </div><div style=display:none>
-    
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
@@ -296,10 +248,6 @@ div.output_prompt {
 </div>
 
 </div>
-    </div></section>
-    </section><section>
-    <section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -310,10 +258,7 @@ div.output_prompt {
 <h3 id="http://bit.ly/denel_python"><a href="http://bit.ly/denel_python">http://bit.ly/denel_python</a><a class="anchor-link" href="#http://bit.ly/denel_python">&#182;</a></h3>
 </div>
 </div>
-</div></section>
-    </section><section>
-    <section>
-    
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -334,10 +279,7 @@ div.output_prompt {
 
 </div>
 </div>
-</div></section>
-    </section><section>
-    <section>
-    
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -358,10 +300,7 @@ div.output_prompt {
 
 </div>
 </div>
-</div></section>
-    </section><section>
-    <section>
-    
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -379,10 +318,7 @@ div.output_prompt {
 
 </div>
 </div>
-</div></section>
-    </section><section>
-    <section>
-    
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -403,10 +339,7 @@ div.output_prompt {
 
 </div>
 </div>
-</div></section>
-    </section><section>
-    <section>
-    
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -426,10 +359,7 @@ div.output_prompt {
 
 </div>
 </div>
-</div></section>
-    </section><section>
-    <section>
-    
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -439,10 +369,7 @@ div.output_prompt {
 
 </div>
 </div>
-</div></section>
-    </section><section>
-    <section>
-    
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -452,10 +379,7 @@ div.output_prompt {
 
 </div>
 </div>
-</div></section>
-    </section><section>
-    <section>
-    
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -500,10 +424,7 @@ div.output_prompt {
 
 </div>
 </div>
-</div></section>
-    </section><section>
-    <section>
-    
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -547,10 +468,7 @@ div.output_prompt {
 
 </div>
 </div>
-</div></section>
-    </section><section>
-    <section>
-    
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -560,10 +478,7 @@ div.output_prompt {
 
 </div>
 </div>
-</div></section>
-    </section><section>
-    <section>
-    
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -585,10 +500,7 @@ div.output_prompt {
 
 </div>
 </div>
-</div></section>
-    </section><section>
-    <section>
-    
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -612,10 +524,7 @@ div.output_prompt {
 
 </div>
 </div>
-</div></section>
-    </section><section>
-    <section>
-    
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -626,10 +535,7 @@ div.output_prompt {
 <h3 id="Python-Basics-Workbook"><a href="resources/notebooks/python_basics.ipynb">Python Basics Workbook</a><a class="anchor-link" href="#Python-Basics-Workbook">&#182;</a></h3><h3 id="Python-Basics-Workbook-(2)"><a href="resources/notebooks/python_basics_2.ipynb">Python Basics Workbook (2)</a><a class="anchor-link" href="#Python-Basics-Workbook-(2)">&#182;</a></h3>
 </div>
 </div>
-</div></section>
-    </section><section>
-    <section>
-    
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -642,10 +548,7 @@ div.output_prompt {
 
 </div>
 </div>
-</div></section>
-    </section><section>
-    <section>
-    
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -657,8 +560,7 @@ div.output_prompt {
 
 </div>
 </div>
-</div><div style=display:none>
-    
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -676,8 +578,6 @@ div.output_prompt {
 </div>
 </div>
 </div>
-    </div><div style=display:none>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -692,10 +592,6 @@ div.output_prompt {
 </div>
 </div>
 </div>
-    </div></section>
-    </section><section>
-    <section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -713,10 +609,7 @@ div.output_prompt {
 
 </div>
 </div>
-</div></section>
-    </section><section>
-    <section>
-    
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -731,10 +624,7 @@ div.output_prompt {
 
 </div>
 </div>
-</div></section>
-    </section><section>
-    <section>
-    
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -755,10 +645,7 @@ div.output_prompt {
 
 </div>
 </div>
-</div></section>
-    </section><section>
-    <section>
-    
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -776,10 +663,7 @@ div.output_prompt {
 
 </div>
 </div>
-</div></section>
-    </section><section>
-    <section>
-    
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -804,10 +688,7 @@ div.output_prompt {
 
 </div>
 </div>
-</div></section>
-    </section><section>
-    <section>
-    
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -832,10 +713,7 @@ div.output_prompt {
 
 </div>
 </div>
-</div></section>
-    </section><section>
-    <section>
-    
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -845,10 +723,7 @@ div.output_prompt {
 
 </div>
 </div>
-</div></section>
-    </section><section>
-    <section>
-    
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -858,8 +733,7 @@ div.output_prompt {
 
 </div>
 </div>
-</div><div class="fragment" data-fragment-index="29">
-    
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
@@ -1409,10 +1283,6 @@ div.output_prompt {
 </div>
 
 </div>
-    </div></section>
-    </section><section>
-    <section>
-    
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1433,10 +1303,7 @@ div.output_prompt {
 
 </div>
 </div>
-</div></section>
-    </section><section>
-    <section>
-    
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1456,10 +1323,7 @@ div.output_prompt {
 <h3 id="NumPy-Demo"><a href="resources/notebooks/numpy_basics.ipynb">NumPy Demo</a><a class="anchor-link" href="#NumPy-Demo">&#182;</a></h3>
 </div>
 </div>
-</div></section>
-    </section><section>
-    <section>
-    
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1479,10 +1343,7 @@ div.output_prompt {
 
 </div>
 </div>
-</div></section>
-    </section><section>
-    <section>
-    
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1496,10 +1357,7 @@ div.output_prompt {
 
 </div>
 </div>
-</div></section>
-    </section><section>
-    <section>
-    
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1515,10 +1373,7 @@ div.output_prompt {
 <h3 id="pandas-demo"><a href="resources/notebooks/pandas_basics2.ipynb">pandas demo</a><a class="anchor-link" href="#pandas-demo">&#182;</a></h3>
 </div>
 </div>
-</div></section>
-    </section><section>
-    <section>
-    
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1533,10 +1388,7 @@ div.output_prompt {
 <h3 id="SymPy-Demo"><a href="resources/notebooks/sympy_basics.ipynb">SymPy Demo</a><a class="anchor-link" href="#SymPy-Demo">&#182;</a></h3>
 </div>
 </div>
-</div></section>
-    </section><section>
-    <section>
-    
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1557,10 +1409,7 @@ div.output_prompt {
 
 </div>
 </div>
-</div></section>
-    </section><section>
-    <section>
-    
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1585,10 +1434,7 @@ div.output_prompt {
 
 </div>
 </div>
-</div></section>
-    </section><section>
-    <section>
-    
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1608,10 +1454,7 @@ div.output_prompt {
 
 </div>
 </div>
-</div></section>
-    </section><section>
-    <section>
-    
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1628,10 +1471,7 @@ div.output_prompt {
 
 </div>
 </div>
-</div></section>
-    </section><section>
-    <section>
-    
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1644,10 +1484,7 @@ div.output_prompt {
 
 </div>
 </div>
-</div></section>
-    </section><section>
-    <section>
-    
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1676,10 +1513,7 @@ div.output_prompt {
 
 </div>
 </div>
-</div></section>
-    </section><section>
-    <section>
-    
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1694,10 +1528,7 @@ div.output_prompt {
 
 </div>
 </div>
-</div></section>
-    </section><section>
-    <section>
-    
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
@@ -1715,10 +1546,7 @@ div.output_prompt {
 </div>
 </div>
 
-</div></section>
-    </section><section>
-    <section>
-    
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
@@ -1732,10 +1560,7 @@ div.output_prompt {
 </div>
 </div>
 
-</div></section>
-    </section><section>
-    <section>
-    
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1748,10 +1573,7 @@ div.output_prompt {
 
 </div>
 </div>
-</div></section>
-    </section><section>
-    <section>
-    
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1764,10 +1586,7 @@ Cython gives you the combined power of Python and C to let you:
 
 </div>
 </div>
-</div></section>
-    </section><section>
-    <section>
-    
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1786,10 +1605,7 @@ Cython gives you the combined power of Python and C to let you:
 
 </div>
 </div>
-</div></section>
-    </section><section>
-    <section>
-    
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1808,10 +1624,7 @@ Cython gives you the combined power of Python and C to let you:
 
 </div>
 </div>
-</div></section>
-    </section><section>
-    <section>
-    
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1828,10 +1641,7 @@ Cython gives you the combined power of Python and C to let you:
 
 </div>
 </div>
-</div></section>
-    </section><section>
-    <section>
-    
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1854,10 +1664,7 @@ Cython gives you the combined power of Python and C to let you:
 
 </div>
 </div>
-</div></section>
-    </section><section>
-    <section>
-    
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1883,10 +1690,7 @@ Cython gives you the combined power of Python and C to let you:
 
 </div>
 </div>
-</div></section>
-    </section><section>
-    <section>
-    
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1906,10 +1710,7 @@ Cython gives you the combined power of Python and C to let you:
 
 </div>
 </div>
-</div></section>
-    </section><section>
-    <section>
-    
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1923,10 +1724,7 @@ Cython gives you the combined power of Python and C to let you:
 
 </div>
 </div>
-</div></section>
-    </section><section>
-    <section>
-    
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1937,10 +1735,7 @@ Cython gives you the combined power of Python and C to let you:
 
 </div>
 </div>
-</div></section>
-    </section><section>
-    <section>
-    
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -2156,8 +1951,7 @@ Cython gives you the combined power of Python and C to let you:
 
 </div>
 </div>
-</div><div class="fragment" data-fragment-index="29">
-        
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
@@ -2171,63 +1965,7 @@ Cython gives you the combined power of Python and C to let you:
 </div>
 
 </div>
-        </div>
-</div>
-</div>
-
-<script src="reveal.js/lib/js/head.min.js"></script>
-
-<script src="reveal.js/js/reveal.js"></script>
-
-<script>
-
-// Full list of configuration options available here: https://github.com/hakimel/reveal.js#configuration
-Reveal.initialize({
-controls: true,
-progress: true,
-history: true,
-
-theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/none
-
-// Optional libraries used to extend on reveal.js
-dependencies: [
-{ src: "reveal.js/lib/js/classList.js", condition: function() { return !document.body.classList; } },
-{ src: "reveal.js/plugin/notes/notes.js", async: true, condition: function() { return !!document.body.classList; } }
-]
-});
-</script>
-
-<!-- Loading mathjax macro -->
-<!-- Load mathjax -->
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
-    <!-- MathJax configuration -->
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-            processEscapes: true,
-            processEnvironments: true
-        },
-        // Center justify equations in code and markdown cells. Elsewhere
-        // we use CSS to left justify single line equations in code cells.
-        displayAlign: 'center',
-        "HTML-CSS": {
-            styles: {'.MathJax_Display': {"margin": 0}},
-            linebreaks: { automatic: true }
-        }
-    });
-    </script>
-    <!-- End of mathjax configuration -->
-
-<script>
-Reveal.addEventListener( 'slidechanged', function( event ) {
-  window.scrollTo(0,0);
-  MathJax.Hub.Rerender(event.currentSlide);
-});
-</script>
-
+    </div>
+  </div>
 </body>
-
 </html>
